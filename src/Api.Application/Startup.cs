@@ -28,6 +28,7 @@ namespace application
             ConfigureService.ConfigureDependenciesService(services);
             ConfigureRepository.ConfigureDependenciesRepository(services);
             services.AddControllers();
+            services.AddSwaggerGen();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -37,6 +38,15 @@ namespace application
             {
                 app.UseDeveloperExceptionPage();
             }
+            // start Swagger 
+            app.UseSwagger();
+            app.UseSwaggerUI(p =>
+            {
+                p.SwaggerEndpoint("/swagger/v1/swagger.json", "NetCore Core Concepts Pratice");
+                p.RoutePrefix = string.Empty;
+            });
+
+            // end Swagger
 
             app.UseRouting();
 
