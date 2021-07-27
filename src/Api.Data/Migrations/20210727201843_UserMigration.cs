@@ -22,6 +22,11 @@ namespace Data.Migrations
                     table.PrimaryKey("PK_User", x => x.Id);
                 });
 
+            migrationBuilder.InsertData(
+                table: "User",
+                columns: new[] { "Id", "CreateAt", "Email", "Name", "UpdateAt" },
+                values: new object[] { new Guid("2b441a98-4345-48b7-865b-ef8c7b68708a"), new DateTime(2021, 7, 27, 17, 18, 43, 593, DateTimeKind.Local).AddTicks(9036), "admin@admin.com", "Admin", new DateTime(2021, 7, 27, 17, 18, 43, 595, DateTimeKind.Local).AddTicks(2874) });
+
             migrationBuilder.CreateIndex(
                 name: "IX_User_Email",
                 table: "User",

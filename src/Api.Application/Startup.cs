@@ -18,6 +18,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.OpenApi.Models;
 using Api.CrossCutting.Mappings;
 using AutoMapper;
+using Api.Data.Context;
 
 namespace application
 {

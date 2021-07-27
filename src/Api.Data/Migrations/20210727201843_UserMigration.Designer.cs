@@ -9,14 +9,14 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Data.Migrations
 {
     [DbContext(typeof(MyContext))]
-    [Migration("20210721150000_UserMigration")]
+    [Migration("20210727201843_UserMigration")]
     partial class UserMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "3.1.17")
+                .HasAnnotation("ProductVersion", "3.1.6")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
             modelBuilder.Entity("Api.Domain.Entities.UserEntity", b =>
@@ -46,6 +46,16 @@ namespace Data.Migrations
                         .IsUnique();
 
                     b.ToTable("User");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("2b441a98-4345-48b7-865b-ef8c7b68708a"),
+                            CreateAt = new DateTime(2021, 7, 27, 17, 18, 43, 593, DateTimeKind.Local).AddTicks(9036),
+                            Email = "admin@admin.com",
+                            Name = "Admin",
+                            UpdateAt = new DateTime(2021, 7, 27, 17, 18, 43, 595, DateTimeKind.Local).AddTicks(2874)
+                        });
                 });
 #pragma warning restore 612, 618
         }
