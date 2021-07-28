@@ -8,6 +8,6 @@ namespace Api.Domain.Repository
     public interface IMunicipioRepository : IRepository<MunicipioEntity>
     {
         Task<MunicipioEntity> getCompleteById(Guid id);
-        Task<MunicipioEntity> getCompleteByIBGE(Guid codIBGE);
+        Task<MunicipioEntity> getCompleteByIBGE(int codIBGE);
     }
 }
